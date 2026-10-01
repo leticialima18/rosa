@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Outubro Rosa | Enfermagem</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #fff9fb;
+            color: #684a55;
+        }
+
+        /* =========================
+           MENU
+        ========================= */
+
+        header {
+            background: rgba(255, 249, 251, 0.96);
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            box-shadow: 0 3px 15px rgba(150, 80, 100, 0.08);
+        }
+
+        .logo {
+            color: #c98299;
+            font-size: 23px;
+            font-weight: 600;
+        }
+
+        nav a {
+            color: #805866;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d98fa6;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 88vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 50px 20px;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    #ffffff 0%,
+                    #fdebf2 35%,
+                    #f8d9e4 100%
+                );
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "♡";
+            position: absolute;
+            font-size: 180px;
+            color: rgba(217, 143, 166, 0.08);
+            top: 20px;
+            left: 8%;
+        }
+
+        .hero::after {
+            content: "♡";
+            position: absolute;
+            font-size: 220px;
+            color: rgba(217, 143, 166, 0.07);
+            bottom: -60px;
+            right: 5%;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 1;
+        }
+
+        .ribbon {
+            font-size: 75px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            color: #b8758b;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.7;
+            color: #765764;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+
+            background: #d99aae;
+            color: white;
+
+            padding: 14px 30px;
+
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            font-weight: 500;
+
+            box-shadow: 0 6px 18px rgba(217, 154, 174, 0.3);
+
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #c98299;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           SEÇÕES
+        ========================= */
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            color: #b8758b;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: #876674;
+        }
+
+
+        /* =========================
+           SOBRE
+        ========================= */
+
+        .sobre {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .sobre-texto {
+            font-size: 17px;
+            line-height: 1.9;
+        }
+
+        .destaque {
+            background: linear-gradient(
+                135deg,
+                #fceaf1,
+                #f9dce6
+            );
+
+            padding: 35px;
+
+            border-radius: 25px;
+
+            border: 1px solid #f1cbd8;
+
+            box-shadow:
+                0 10px 30px rgba(180, 110, 130, 0.08);
+        }
+
+        .destaque h3 {
+            color: #b8758b;
+            margin-bottom: 15px;
+        }
+
+        .destaque p {
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           CARDS
+        ========================= */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 22px;
+
+            border: 1px solid #f4dce4;
+
+            box-shadow:
+                0 8px 25px rgba(180, 110, 130, 0.08);
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 12px 30px rgba(180, 110, 130, 0.14);
+        }
+
+        .card .icon {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #b8758b;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           SINAIS
+        ========================= */
+
+        .sinais {
+            background: #fceaf1;
+        }
+
+        .lista {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .item {
+            background: white;
+
+            margin: 15px 0;
+
+            padding: 18px 22px;
+
+            border-radius: 15px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 15px;
+
+            box-shadow:
+                0 5px 15px rgba(180, 110, 130, 0.07);
+        }
+
+        .check {
+            background: #dfa2b5;
+
+            color: white;
+
+            min-width: 34px;
+            height: 34px;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        /* =========================
+           ENFERMAGEM
+        ========================= */
+
+        .enfermagem {
+            background: #f8dce6;
+        }
+
+        .enfermagem .card {
+            background: rgba(255, 255, 255, 0.85);
+        }
+
+
+        /* =========================
+           MITOS
+        ========================= */
+
+        .mitos {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .mito {
+            background: white;
+
+            margin: 20px 0;
+
+            padding: 25px;
+
+            border-radius: 18px;
+
+            border-left: 4px solid #dfa2b5;
+
+            box-shadow:
+                0 5px 18px rgba(180, 110, 130, 0.07);
+        }
+
+        .mito h3 {
+            color: #b8758b;
+            margin-bottom: 10px;
+        }
+
+        .mito p {
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           QUIZ
+        ========================= */
+
+        .quiz {
+            max-width: 700px;
+
+            margin: auto;
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 25px;
+
+            border: 1px solid #f2d6df;
+
+            box-shadow:
+                0 10px 30px rgba(180, 110, 130, 0.09);
+        }
+
+        .quiz-question {
+            margin-bottom: 30px;
+        }
+
+        .quiz-question h3 {
+            margin-bottom: 15px;
+            color: #b8758b;
+        }
+
+        .quiz label {
+            display: block;
+
+            background: #fff5f8;
+
+            margin: 10px 0;
+
+            padding: 14px;
+
+            border-radius: 10px;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .quiz label:hover {
+            background: #fce4ec;
+        }
+
+        .quiz button {
+            width: 100%;
+
+            border: none;
+
+            background: #d99aae;
+
+            color: white;
+
+            padding: 15px;
+
+            border-radius: 25px;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .quiz button:hover {
+            background: #c98299;
+        }
+
+        #resultado {
+            text-align: center;
+
+            margin-top: 25px;
+
+            font-size: 19px;
+
+            font-weight: 600;
+
+            color: #b8758b;
+        }
+
+
+        /* =========================
+           FONTES
+        ========================= */
+
+        .fontes {
+            text-align: center;
+            background: #fff9fb;
+        }
+
+        .fontes p {
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #c98299;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 30px;
+        }
+
+        footer p {
+            margin: 8px;
+        }
+
+
+        /* =========================
+           RESPONSIVO
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 8px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .ribbon {
+                font-size: 60px;
+            }
+
+            .sobre {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- MENU -->
+
+    <header>
+
+        <div class="logo">
+            🎀 Outubro Rosa
+        </div>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#sinais">Sinais</a>
+            <a href="#enfermagem">Enfermagem</a>
+            <a href="#quiz">Quiz</a>
+        </nav>
+
+    </header>
+
+
+    <!-- INÍCIO -->
+
+    <section class="hero" id="inicio">
+
+        <div class="hero-content">
+
+            <div class="ribbon">
+                🎀
+            </div>
+
+            <h1>
+                Outubro Rosa
+            </h1>
+
+            <p>
+                Informação, cuidado e conscientização
+                para a saúde das mamas.
+            </p>
+
+            <a href="#sobre" class="button">
+                Conheça a campanha ♡
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SOBRE -->
+
+    <section id="sobre">
+
+        <div class="section-title">
+
+            <h2>
+                🌷 Sobre o Outubro Rosa
+            </h2>
+
+            <p>
+                Um mês dedicado à conscientização e ao cuidado.
+            </p>
+
+        </div>
+
+
+        <div class="sobre">
+
+            <div class="sobre-texto">
+
+                <p>
+                    O Outubro Rosa é um movimento de conscientização
+                    sobre a saúde das mamas e sobre o câncer de mama.
+                </p>
+
+                <br>
+
+                <p>
+                    A campanha incentiva o acesso à informação,
+                    o reconhecimento de alterações e a busca
+                    por atendimento nos serviços de saúde.
+                </p>
+
+            </div>
+
+
+            <div class="destaque">
+
+                <h3>
+                    💗 Informação também é cuidado
+                </h3>
+
+                <p>
+                    Conhecer o próprio corpo e estar atento às
+                    mudanças são atitudes importantes para cuidar
+                    da saúde.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INFORMAÇÕES -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>
+                🌸 Conheça
+            </h2>
+
+            <p>
+                Algumas informações importantes.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="icon">
+                    🎀
+                </div>
+
+                <h3>
+                    O que é?
+                </h3>
+
+                <p>
+                    O câncer de mama ocorre quando células
+                    da mama apresentam crescimento desordenado.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🔎
+                </div>
+
+                <h3>
+                    Atenção
+                </h3>
+
+                <p>
+                    Alterações nas mamas devem ser observadas
+                    e avaliadas por profissionais de saúde.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🌷
+                </div>
+
+                <h3>
+                    Cuidado
+                </h3>
+
+                <p>
+                    O acompanhamento adequado faz parte
+                    do cuidado integral com a saúde.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SINAIS -->
+
+    <section class="sinais" id="sinais">
+
+        <div class="section-title">
+
+            <h2>
+                🔎 Sinais e sintomas
+            </h2>
+
+            <p>
+                Algumas alterações merecem atenção.
+            </p>
+
+        </div>
+
+
+        <div class="lista">
+
+            <div class="item">
+
+                <div class="check">
+                    ✓
+                </div>
+
+                <p>
+                    Nódulo ou alteração endurecida na mama.
+                </p>
+
+            </div>
+
+
+            <div class="item">
+
+                <div class="check">
+                    ✓
+                </div>
+
+                <p>
+                    Alterações no tamanho ou formato da mama.
+                </p>
+
+            </div>
+
+
+            <div class="item">
+
+                <div class="check">
+                    ✓
+                </div>
+
+                <p>
+                    Alterações na pele da mama.
+                </p>
+
+            </div>
+
+
+            <div class="item">
+
+                <div class="check">
+                    ✓
+                </div>
+
+                <p>
+                    Alterações no mamilo.
+                </p>
+
+            </div>
+
+
+            <div class="item">
+
+                <div class="check">
+                    ✓
+                </div>
+
+                <p>
+                    Saída espontânea de secreção pelo mamilo.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ENFERMAGEM -->
+
+    <section class="enfermagem" id="enfermagem">
+
+        <div class="section-title">
+
+            <h2>
+                👩‍⚕️ Enfermagem e Outubro Rosa
+            </h2>
+
+            <p>
+                O profissional de enfermagem também participa
+                da promoção da saúde.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="icon">
+                    🩺
+                </div>
+
+                <h3>
+                    Educação em saúde
+                </h3>
+
+                <p>
+                    Orientação sobre saúde das mamas,
+                    prevenção e sinais de alerta.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    💗
+                </div>
+
+                <h3>
+                    Acolhimento
+                </h3>
+
+                <p>
+                    Escuta, orientação e atendimento
+                    humanizado.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    📋
+                </div>
+
+                <h3>
+                    Orientação
+                </h3>
+
+                <p>
+                    Auxílio na orientação sobre os serviços
+                    de saúde e acompanhamento.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MITOS -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>
+                ❀ Mitos e verdades
+            </h2>
+
+            <p>
+                Vamos esclarecer algumas dúvidas.
+            </p>
+
+        </div>
+
+
+        <div class="mitos">
+
+            <div class="mito">
+
+                <h3>
+                    ❀ Todo nódulo na mama é câncer?
+                </h3>
+
+                <p>
+                    Não. Existem diferentes causas para nódulos
+                    e alterações nas mamas. A avaliação profissional
+                    é importante para determinar a causa.
+                </p>
+
+            </div>
+
+
+            <div class="mito">
+
+                <h3>
+                    ❀ Homens podem ter câncer de mama?
+                </h3>
+
+                <p>
+                    Sim. Apesar de ser menos frequente, o câncer
+                    de mama também pode ocorrer em homens.
+                </p>
+
+            </div>
+
+
+            <div class="mito">
+
+                <h3>
+                    ❀ Uma alteração deve ser ignorada?
+                </h3>
+
+                <p>
+                    Não. Alterações persistentes ou diferentes
+                    do habitual devem ser avaliadas por um
+                    profissional de saúde.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUIZ -->
+
+    <section class="sinais" id="quiz">
+
+        <div class="section-title">
+
+            <h2>
+                🧠 Quiz do Outubro Rosa
+            </h2>
+
+            <p>
+                Teste seus conhecimentos.
+            </p>
+
+        </div>
+
+
+        <div class="quiz">
+
+            <div class="quiz-question">
+
+                <h3>
+                    1. Qual é a cor símbolo do Outubro Rosa?
+                </h3>
+
+                <label>
+                    <input type="radio" name="q1" value="a">
+                    Azul
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="b">
+                    Rosa
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="c">
+                    Verde
+                </label>
+
+            </div>
+
+
+            <div class="quiz-question">
+
+                <h3>
+                    2. Uma alteração na mama deve ser:
+                </h3>
+
+                <label>
+                    <input type="radio" name="q2" value="a">
+                    Ignorada
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="b">
+                    Avaliada por um profissional
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="c">
+                    Tratada em casa
+                </label>
+
+            </div>
+
+
+            <div class="quiz-question">
+
+                <h3>
+                    3. A enfermagem pode atuar na:
+                </h3>
+
+                <label>
+                    <input type="radio" name="q3" value="a">
+                    Educação em saúde
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="b">
+                    Apenas administração
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="c">
+                    Nenhuma ação relacionada
+                </label>
+
+            </div>
+
+
+            <button onclick="verificarQuiz()">
+                Ver meu resultado ♡
+            </button>
+
+
+            <div id="resultado"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL -->
+
+    <section class="fontes">
+
+        <div class="section-title">
+
+            <h2>
+                🌷 Para lembrar
+            </h2>
+
+            <p>
+                Cuidar da saúde é um gesto de carinho consigo mesma.
+            </p>
+
+        </div>
+
+        <p>
+            🎀 Informação • Cuidado • Acolhimento • Enfermagem
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            🎀 Outubro Rosa | Enfermagem
+        </p>
+
+        <p>
+            Informação também é uma forma de cuidado. ♡
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        function verificarQuiz() {
+
+            let pontos = 0;
+
+            const q1 =
+                document.querySelector(
+                    'input[name="q1"]:checked'
+                );
+
+            const q2 =
+                document.querySelector(
+                    'input[name="q2"]:checked'
+                );
+
+            const q3 =
+                document.querySelector(
+                    'input[name="q3"]:checked'
+                );
+
+
+            if (!q1 || !q2 || !q3) {
+
+                document.getElementById("resultado").innerHTML =
+                    "🌷 Responda todas as perguntas.";
+
+                return;
+            }
+
+
+            if (q1.value === "b") {
+                pontos++;
+            }
+
+            if (q2.value === "b") {
+                pontos++;
+            }
+
+            if (q3.value === "a") {
+                pontos++;
+            }
+
+
+            let mensagem = "";
+
+            if (pontos === 3) {
+
+                mensagem =
+                    "🎀 Parabéns! Você acertou 3 de 3!";
+
+            } else if (pontos === 2) {
+
+                mensagem =
+                    "🌸 Muito bem! Você acertou 2 de 3!";
+
+            } else {
+
+                mensagem =
+                    "💗 Você acertou " +
+                    pontos +
+                    " de 3. Continue aprendendo!";
+
+            }
+
+
+            document.getElementById("resultado").innerHTML =
+                mensagem;
+
+        }
+
+    </script>
+
+</body>
+
+</html>
