@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Outubro Rosa | Cuidar é um ato de amor</title>
+
+  <style>
+    :root {
+      --rosa-escuro: #c2185b;
+      --rosa: #e91e63;
+      --rosa-medio: #f06292;
+      --rosa-claro: #fce4ec;
+      --rosa-suave: #fff5f8;
+      --branco: #ffffff;
+      --texto: #4a2635;
+      --cinza: #6d5962;
+      --sombra: 0 8px 25px rgba(194, 24, 91, 0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--rosa-suave);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+
+    header {
+      background: linear-gradient(135deg, #ad1457, #e91e63, #f48fb1);
+      color: white;
+      padding: 18px 7%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.12);
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    .laco {
+      font-size: 2.3rem;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 9px 13px;
+      border-radius: 20px;
+      transition: 0.3s;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    
+
+    .hero {
+      min-height: 580px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 70px 20px;
+      background:
+        radial-gradient(circle at 10% 20%, #f8bbd0 0, transparent 25%),
+        radial-gradient(circle at 90% 80%, #f48fb1 0, transparent 25%),
+        linear-gradient(135deg, #fff5f8, #fce4ec);
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero-laco {
+      font-size: 7rem;
+      margin-bottom: 15px;
+      animation: flutuar 3s infinite ease-in-out;
+    }
+
+    @keyframes flutuar {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      color: var(--rosa-escuro);
+      margin-bottom: 15px;
+    }
+
+    .hero h2 {
+      font-size: 1.4rem;
+      color: var(--rosa);
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      color: var(--cinza);
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 28px;
+      background: var(--rosa);
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: var(--sombra);
+    }
+
+    .btn:hover {
+      background: var(--rosa-escuro);
+      transform: translateY(-3px);
+    }
+
+
+
+    section {
+      padding: 80px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      color: var(--rosa-escuro);
+      font-size: 2.3rem;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: var(--cinza);
+      max-width: 700px;
+      margin: auto;
+    }
+
+
+    .cards {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: var(--sombra);
+      border-top: 5px solid var(--rosa);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+    }
+
+    .card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: var(--rosa-escuro);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--cinza);
+    }
+
+
+    #autoexame {
+      background: white;
+    }
+
+    .steps {
+      max-width: 950px;
+      margin: auto;
+      display: grid;
+      gap: 18px;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 22px;
+      background: var(--rosa-suave);
+      border-radius: 15px;
+      border-left: 5px solid var(--rosa);
+    }
+
+    .number {
+      min-width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--rosa);
+      color: white;
+      font-weight: bold;
+    }
+
+    .step h3 {
+      color: var(--rosa-escuro);
+      margin-bottom: 5px;
+    }
+
+
+    .alerta {
+      max-width: 900px;
+      margin: 40px auto 0;
+      padding: 25px;
+      background: #fff0f4;
+      border: 1px solid #f8bbd0;
+      border-radius: 15px;
+    }
+
+    .alerta h3 {
+      color: var(--rosa-escuro);
+      margin-bottom: 10px;
+    }
+
+
+    .apoio {
+      background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+    }
+
+    .apoio-card {
+      background: white;
+      border-radius: 20px;
+      padding: 35px;
+      max-width: 850px;
+      margin: auto;
+      box-shadow: var(--sombra);
+    }
+
+    .apoio-card ul {
+      list-style: none;
+      margin-top: 20px;
+    }
+
+    .apoio-card li {
+      padding: 15px;
+      margin-bottom: 12px;
+      background: var(--rosa-suave);
+      border-radius: 10px;
+    }
+
+    .apoio-card strong {
+      color: var(--rosa-escuro);
+    }
+
+
+    .faq {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .faq-item {
+      background: white;
+      margin-bottom: 15px;
+      border-radius: 12px;
+      box-shadow: var(--sombra);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      border: none;
+      background: white;
+      padding: 20px;
+      text-align: left;
+      cursor: pointer;
+      color: var(--rosa-escuro);
+      font-size: 1rem;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 20px 20px;
+      color: var(--cinza);
+    }
+
+    .faq-answer.active {
+      display: block;
+    }
+
+
+    footer {
+      background: #880e4f;
+      color: white;
+      padding: 40px 7%;
+      text-align: center;
+    }
+
+    footer .footer-laco {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      opacity: 0.9;
+      margin: 5px 0;
+    }
+
+
+    @media (max-width: 800px) {
+      .navbar {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav ul {
+        gap: 4px;
+      }
+
+      nav a {
+        font-size: 0.82rem;
+        padding: 7px 9px;
+      }
+
+      .hero-laco {
+        font-size: 5rem;
+      }
+
+      section {
+        padding: 60px 5%;
+      }
+
+      .step {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <header>
+    <div class="navbar">
+
+      <div class="logo">
+        <span class="laco">🎀</span>
+        <span>Outubro Rosa</span>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#prevencao">Prevenção</a></li>
+          <li><a href="#autoexame">Autoexame</a></li>
+          <li><a href="#apoio">Apoio</a></li>
+          <li><a href="#faq">Dúvidas</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+
+  <main>
+
+    <section class="hero" id="inicio">
+
+      <div class="hero-content">
+
+        <div class="hero-laco">🎀</div>
+
+        <h1>Outubro Rosa</h1>
+
+        <h2>Cuidar de si também é um ato de amor.</h2>
+
+        <p>
+          Um espaço de informação e acolhimento para incentivar
+          a prevenção, o cuidado com a saúde das mamas e a busca
+          por apoio quando necessário.
+        </p>
+
+        <a href="#prevencao" class="btn">
+          Quero saber mais
+        </a>
+
+      </div>
+
+    </section>
+
+
+
+    <section id="prevencao">
+
+      <div class="section-title">
+
+        <h2>🌷 Prevenção e cuidado</h2>
+
+        <p>
+          Conhecer o próprio corpo e manter acompanhamento
+          regular são atitudes importantes para cuidar da saúde.
+        </p>
+
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="card-icon">🏃‍♀️</div>
+
+          <h3>Atividade física</h3>
+
+          <p>
+            Manter uma rotina de atividades físicas pode contribuir
+            para uma vida mais saudável.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🥗</div>
+
+          <h3>Alimentação equilibrada</h3>
+
+          <p>
+            Uma alimentação variada e equilibrada faz parte
+            de hábitos importantes para a saúde.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🩺</div>
+
+          <h3>Acompanhamento médico</h3>
+
+          <p>
+            Converse com profissionais de saúde sobre seu histórico
+            e sobre quais exames são indicados para você.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">💗</div>
+
+          <h3>Conheça seu corpo</h3>
+
+          <p>
+            Observe suas mamas e procure atendimento caso perceba
+            alguma alteração que seja nova ou persistente.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section id="autoexame">
+
+      <div class="section-title">
+
+        <h2>🎀 Conheça suas mamas</h2>
+
+        <p>
+          A observação das mamas pode ajudar você a perceber
+          alterações. Ela não substitui avaliação profissional
+          nem os exames recomendados para sua faixa etária e risco.
+        </p>
+
+      </div>
+
+      <div class="steps">
+
+        <div class="step">
+
+          <div class="number">1</div>
+
+          <div>
+            <h3>Observe</h3>
+
+            <p>
+              Observe as mamas diante do espelho, procurando
+              mudanças recentes no formato, tamanho ou aparência.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="number">2</div>
+
+          <div>
+            <h3>Toque</h3>
+
+            <p>
+              Conheça a textura habitual das suas mamas e observe
+              se existe alguma alteração nova ou persistente.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="number">3</div>
+
+          <div>
+            <h3>Observe os mamilos</h3>
+
+            <p>
+              Preste atenção a alterações recentes nos mamilos,
+              como mudanças de aparência ou secreções inesperadas.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="number">4</div>
+
+          <div>
+            <h3>Procure atendimento</h3>
+
+            <p>
+              Caso perceba uma alteração que não seja habitual,
+              procure um profissional de saúde para avaliação.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="alerta">
+
+        <h3>⚠️ Importante</h3>
+
+        <p>
+          Nem toda alteração nas mamas significa câncer.
+          Somente uma avaliação realizada por profissionais
+          de saúde pode determinar a causa de um sinal ou sintoma.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="apoio" id="apoio">
+
+      <div class="section-title">
+
+        <h2>💗 Apoio emocional e psicológico</h2>
+
+        <p>
+          Receber um diagnóstico ou passar por uma investigação
+          pode trazer medo, ansiedade e muitas dúvidas.
+          Você não precisa enfrentar esse momento sozinha.
+        </p>
+
+      </div>
+
+      <div class="apoio-card">
+
+        <h3>Onde buscar ajuda</h3>
+
+        <ul>
+
+          <li>
+            🧠 <strong>Psicólogo:</strong>
+            profissionais de psicologia podem oferecer
+            acompanhamento emocional durante diferentes fases
+            do tratamento.
+          </li>
+
+          <li>
+            🏥 <strong>Unidades de saúde:</strong>
+            procure uma unidade de saúde da sua região para
+            orientação e encaminhamento.
+          </li>
+
+          <li>
+            👨‍👩‍👧 <strong>Rede de apoio:</strong>
+            conversar com pessoas de confiança pode ajudar
+            a diminuir o sentimento de isolamento.
+          </li>
+
+          <li>
+            📞 <strong>CVV — 188:</strong>
+            em situações de sofrimento emocional intenso,
+            o Centro de Valorização da Vida oferece atendimento
+            gratuito e sigiloso no Brasil.
+          </li>
+
+        </ul>
+
+      </div>
+
+    </section>
+
+
+
+    <section id="faq">
+
+      <div class="section-title">
+
+        <h2>❓ Perguntas frequentes</h2>
+
+        <p>
+          Algumas informações importantes sobre o cuidado
+          com a saúde das mamas.
+        </p>
+
+      </div>
+
+
+      <div class="faq">
+
+        <div class="faq-item">
+
+          <button class="faq-question">
+            O autoexame substitui a mamografia?
+            <span>＋</span>
+          </button>
+
+          <div class="faq-answer">
+            Não. O autoexame ou a observação das mamas não substitui
+            os exames de rastreamento recomendados nem a avaliação
+            de um profissional de saúde.
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <button class="faq-question">
+            Qualquer caroço significa câncer?
+            <span>＋</span>
+          </button>
+
+          <div class="faq-answer">
+            Não. Existem diversas causas possíveis para alterações
+            nas mamas. Uma alteração nova deve ser avaliada por
+            um profissional de saúde.
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <button class="faq-question">
+            Quando devo procurar um médico?
+            <span>＋</span>
+          </button>
+
+          <div class="faq-answer">
+            Procure atendimento caso perceba uma alteração nova,
+            persistente ou que cause preocupação. O profissional
+            poderá avaliar a situação e indicar os cuidados adequados.
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <button class="faq-question">
+            Cuidar da saúde emocional também é importante?
+            <span>＋</span>
+          </button>
+
+          <div class="faq-answer">
+            Sim. Saúde física e emocional estão relacionadas.
+            Buscar apoio psicológico pode ser importante durante
+            momentos de investigação, diagnóstico ou tratamento.
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <footer>
+
+    <div class="footer-laco">🎀</div>
+
+    <h2>Outubro Rosa</h2>
+
+    <p>
+      Informação, prevenção, acolhimento e cuidado.
+    </p>
+
+    <p>
+      Este site possui finalidade educativa e não substitui
+      orientação médica ou psicológica.
+    </p>
+
+    <br>
+
+    <p>
+      © 2026 — Projeto Outubro Rosa
+    </p>
+
+  </footer>
+
+
+
+  <script>
+
+    const perguntas =
+      document.querySelectorAll(".faq-question");
+
+    perguntas.forEach(pergunta => {
+
+      pergunta.addEventListener("click", () => {
+
+        const resposta =
+          pergunta.nextElementSibling;
+
+        resposta.classList.toggle("active");
+
+        const simbolo =
+          pergunta.querySelector("span");
+
+        if (resposta.classList.contains("active")) {
+          simbolo.textContent = "−";
+        } else {
+          simbolo.textContent = "＋";
+        }
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html> 
